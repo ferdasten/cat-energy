@@ -6,11 +6,17 @@
 html {
   font-size: $base-font-size;
   height: 100%;
+  font-family: "Oswald-Regular";
+  font-weight: 200;
 }
 
-body { height: 100%; }
+body {
+  height: 100%;
+}
 
-h1, h2, h3, h4, h5, h6 { margin: 0; }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
 
 ul, li {
   list-style-type: none;
@@ -18,9 +24,13 @@ ul, li {
   padding: 0;
 }
 
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
 
-p { margin: 0; }
+p {
+  margin: 0;
+}
 
 audio,
 canvas,
@@ -28,17 +38,27 @@ iframe,
 img,
 svg,
 video,
-textarea { vertical-align: middle; }
+textarea {
+  vertical-align: middle;
+}
 
-textarea { resize: none; }
+textarea {
+  resize: none;
+}
 
-section { position: relative; }
+section {
+  position: relative;
+}
 
 input,
 select,
-button { outline: none; }
+button {
+  outline: none;
+}
 
-*, *:before, *:after { box-sizing: border-box; }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 .wrapper {
   display: flex;
@@ -46,12 +66,160 @@ button { outline: none; }
   height: 100%;
 }
 
-.content { flex: 1 0 auto; }
+.content {
+  flex: 1 0 auto;
+}
 
 .container {
+  transition: $resize;
   margin: 0 auto;
   max-width: $content-size;
   width: 100%;
+  padding: 0 110px;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.main-screen{
+  transition: $resize;
+  width: 100%;
+  & > .container{
+    height: 693px;
+    padding-top: 3px;
+    background: url("../images/general/cat-energy-pro.png") no-repeat top 143px right 35%,url("../images/general/index-background-desktop.jpg") no-repeat right 0 top 0;
+    & > .main-content{
+      transition: $resize;
+      width: auto;
+      margin: 226px 0 0 75px;
+      & > .main-title{
+        font-size: $main-title;
+      }
+      & > .main-description{
+        margin: 46px 0 54px 0;
+        text-transform: uppercase;
+        font-size: $subtext;
+      }
+      & > .main-button{
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: $subtext;
+        border: none;
+        width: 245px;
+        height: 52px;
+        background-color: $main-color;
+        color: #fff;
+      }
+    }
+  }
+}
+@media (max-width: 1220px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 1024px) {
+  .main-screen{
+    & > .container{
+      background: url("../images/general/cat-energy-pro.png") no-repeat top 200px right 0;
+
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .main-screen{
+    & > .container{
+      height: 950px;
+      background: url("../images/general/cat-energy-pro.png") no-repeat top 390px right 81px;
+      & > .main-content{
+        margin: 144px 0 0 90px;
+        & > .main-title{
+
+        }
+        & > .main-description{
+          margin: 46px 0;
+        }
+        & > .main-button{
+
+        }
+      }
+    }
+  }
+  .main-screen_open{
+    margin-top: 273px;
+  }
+}
+@media (max-width: 650px){
+  .main-screen{
+    & > .container{
+      display: flex;
+      justify-content: center;
+      background: url("../images/general/cat-energy-pro.png") no-repeat top 380px center;
+      & > .main-content{
+        margin: 144px 0 0 0;
+        & > .main-title{
+          font-size: $sub-title;
+        }
+        & > .main-description{
+          margin: 2.3em 0;
+          font-size: $small-text;
+        }
+        & > .main-button{
+          font-size: $tab_link;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .container{
+   padding: 0 20px;
+  }
+  .main-screen{
+    & > .container{
+      height: 568px;
+      display: flex;
+      justify-content: center;
+      background: url("../images/general/cat-energy-mobile.png") no-repeat top 219px right 64px, url("../images/general/index-background-mobile.jpg") no-repeat top 57px center, linear-gradient(to bottom, rgb(99, 167, 58) 63.7%, rgba(99, 167, 58, 0) 63.7%, rgba(255, 255, 255, 0) 100%, rgb(4, 120, 21) 100%);
+      & > .main-content{
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+
+        & > .main-title{
+          font-weight: 200;
+          margin-top: 74px;
+          font-size: $sub-title;
+        }
+        & > .main-description{
+          margin-top: -284px;
+          font-size: $small-text;
+        }
+        & > .main-button{
+          height: 40px;
+          width: 100%;
+          font-size: $tab_link;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .main-screen{
+    & > .container {
+      height: 568px;
+      display: flex;
+      justify-content: center;
+      background: url("../images/general/cat-energy-mobile.png") no-repeat top 220px right 12px, url("../images/general/index-background-mobile.jpg") no-repeat top 57px center, linear-gradient(to bottom, rgb(99, 167, 58) 63.7%, rgba(99, 167, 58, 0) 63.7%, rgba(255, 255, 255, 0) 100%, rgb(4, 120, 21) 100%);
+    }
+  }
 }
 
 //Модули

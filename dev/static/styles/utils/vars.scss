@@ -1,6 +1,9 @@
 // Colors
-$white: #ffffff;
-$black: #000000;
+$main-color: #68b738;
+$sub-color: #f2f2f2;
+
+//Transition
+$resize: .5s;
 
 // Sizes
 $base-font-size: 16px;
@@ -16,6 +19,18 @@ $breakpoints: (
   "desktop-wide": 1440px
 );
 
-$content-size: 1024px;
+$content-size: 1440px;
 
 // Fonts
+//Desktop
+$main-title: 3.75rem;//60px
+$sub-title: 2.25rem;//36px
+$serious-text: 1.875rem;//30px
+$subtext: 1.25rem;//20px
+$main-text: 1rem;//16px
+$small-text: .875rem;//14px
+//Tablet
+$tab_link: 1.125rem;//18px
+//Mobile
+$mob_sub-title: 1.5rem;//24px
+$mob_small-text: .75rem;//12px
