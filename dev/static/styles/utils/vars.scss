@@ -1,6 +1,7 @@
 // Colors
 $main-color: #68b738;
 $sub-color: #f2f2f2;
+$font-color: #444444;
 
 //Transition
 $resize: .5s;
@@ -34,3 +35,7 @@ $tab_link: 1.125rem;//18px
 //Mobile
 $mob_sub-title: 1.5rem;//24px
 $mob_small-text: .75rem;//12px
+
+@media (max-width: 768px){
+  $main-title: 2.25rem;//36px
+}

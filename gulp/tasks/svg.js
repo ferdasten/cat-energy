@@ -24,13 +24,15 @@ module.exports = function () {
                 parserOptions: {xmlMode: true}
             }))
             .pipe(replace('&gt;', '>'))
+            //Спрайт в режиме dev почему то не работает
+            /*
             .pipe(svgSprite({
                 mode: {
                     symbol: {
                         sprite: "sprite.svg"
                     }
                 }
-            }))
+            }))*/
             .pipe($.gulp.dest(svgPath.output));
     });
 };
