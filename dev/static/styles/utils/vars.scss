@@ -1,7 +1,8 @@
 // Colors
 $main-color: #68b738;
 $sub-color: #f2f2f2;
-$font-color: #444444;
+$sub-font-color: #444444;
+$font-color: #111111;
 
 //Transition
 $resize: .5s;
@@ -10,32 +11,58 @@ $resize: .5s;
 $base-font-size: 16px;
 
 $breakpoints: (
-  "phone"       : 400px,
-  "phone-wide"  : 480px,
-  "phablet"     : 560px,
-  "tablet-small": 640px,
-  "tablet"      : 768px,
-  "tablet-wide" : 1024px,
-  "desktop"     : 1248px,
-  "desktop-wide": 1440px
+        Laptop : 1440px,
+        Tablet: 768px,
+        620px: 620px,
+        Mobile : 425px
 );
+
 
 $content-size: 1440px;
 
-// Fonts
-//Desktop
-$main-title: 3.75rem;//60px
-$sub-title: 2.25rem;//36px
-$serious-text: 1.875rem;//30px
-$subtext: 1.25rem;//20px
-$main-text: 1rem;//16px
-$small-text: .875rem;//14px
-//Tablet
-$tab_link: 1.125rem;//18px
-//Mobile
-$mob_sub-title: 1.5rem;//24px
-$mob_small-text: .75rem;//12px
 
-@media (max-width: 768px){
-  $main-title: 2.25rem;//36px
-}
+//Font-size
+$main-title: (
+        Laptop : 3.75rem,
+        Tablet: 2.25rem,
+        Mobile : 2.25rem,
+        null  : 3.75rem
+);
+$sub-title: (
+        Laptop : 2.25rem,
+        Tablet: 2.25rem,
+        Mobile : 1.5rem,
+        null  : 2.25rem
+);
+$sub-text: (
+        Laptop : 1.25rem,
+        Tablet: 1.25rem,
+        620px: 1.25rem,
+        Mobile : .875rem,
+        null  : 1.25rem
+);
+$sub-text-two: (
+        Laptop : 1.25rem,
+        Tablet: 1.25rem,
+        Mobile : 1rem,
+        null  : 1.25rem
+);
+$text: (
+        Laptop : 1rem,
+        Tablet: 1rem,
+        620px: 1rem,
+        Mobile : .875rem,
+        null  : 1rem
+);
+$small-text: (
+        Laptop : .875rem,
+        Tablet: .875rem,
+        Mobile : .75rem,
+        null  : .875rem
+);
+$link: (
+        Laptop : 1.25rem,
+        Tablet: 1.125rem,
+        Mobile : 1.25rem,
+        null  : 1.25rem
+);

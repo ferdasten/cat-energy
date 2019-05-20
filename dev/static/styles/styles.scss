@@ -8,6 +8,7 @@ html {
   height: 100%;
   font-family: "Oswald-Regular";
   font-weight: 200;
+  color: $font-color;
 }
 
 body {
@@ -82,29 +83,29 @@ button {
   width: 100%;
 }
 
-.main-screen{
+.main-screen {
   transition: $resize;
   width: 100%;
-  & > .container{
+  & > .container {
     height: 693px;
     padding-top: 3px;
-    background: url("../images/general/cat-energy-pro.png") no-repeat top 143px right 35%,url("../images/general/index-background-desktop.jpg") no-repeat right 0 top 0;
-    & > .main-content{
+    background: url("../images/general/cat-energy-pro.png") no-repeat top 143px right 35%, url("../images/general/index-background-desktop.jpg") no-repeat right 0 top 0;
+    & > .main-content {
       transition: $resize;
       width: auto;
       margin: 226px 0 0 75px;
-      & > .main-title{
-        font-size: $main-title;
+      & > .main-title {
+        @include font-size($main-title);
       }
-      & > .main-description{
+      & > .main-description {
         margin: 46px 0 54px 0;
         text-transform: uppercase;
-        font-size: $subtext;
+        @include font-size($sub-text);
       }
-      & > .main-button{
+      & > .main-button {
         text-transform: uppercase;
         cursor: pointer;
-        font-size: $subtext;
+        @include font-size($sub-text);
         border: none;
         width: 245px;
         height: 52px;
@@ -116,173 +117,243 @@ button {
 }
 .how-works{
   & > .container{
+    display: flex;
+    justify-content: space-between;
     padding-top: 80px;
-    padding-bottom: 216px;
-    & > .main-content{
-      display: flex;
-      justify-content: space-between;
-      & > .card{
-        padding: 42px 52px;
-        width: 570px;
-        height: 372px;
-        background-color: $sub-color;
-        & > .card__title{
-          display: flex;
-          align-items: center;
-          text-transform: uppercase;
-          & > .card__title-text{
-            font-weight: 200;
-          }
-          &:before{
-            content: "";
-            margin-right: 64px;
-            display: block;
-            width: 100px;
-            height: 110px;
-          }
-        }
-        & > .card__description{
-          margin: 40px 0;
-          display: block;
-          font-family: Arial;
-          color: $font-color;
-          font-size: $main-text;
-          width: 446px;
-        }
-        & > .card__link{
-          color: #000;
-          cursor: pointer;
-          text-transform: uppercase;
-          font-size: $subtext;
-          position: relative;
-          &:after{
-            position: absolute;
-            top: 0;
-            content: url("../images/svg/right-arrow.svg");
-            width: 10px;
-            height: 10px;
-            margin: 0 0 0 25px;
-          }
-        }
+    height: 1024px;
+    & > .card{
+      transition: $resize;
+      padding: 50px;
+      width: 570px;
+      max-height: 372px;
+      background-color: $sub-color;
+      position: relative;
+      & > .card__icon{
+        transition: $resize;
+        position: absolute;
+        height: 100px;
+        width: 100px;
       }
-      & > .card:nth-child(1){
-        & > .card__title{
-
-          &:before{
-            background: url("../images/svg/cat-slim.svg") no-repeat top 1px center,radial-gradient(circle, $main-color 48px, transparent 50px);
-          }
-        }
-      }
-      & > .card:nth-child(2){
-        & > .card__title{
-          &:before{
-            width: 144px;
-            margin-right: 20px;
-            background: url("../images/svg/cat-pro.svg") no-repeat center left 4px,radial-gradient(circle, $main-color 48px, transparent 50px);
-          }
-        }
-      }
-    }
-  }
-}
-@media (max-width: 1380px) {
-  .how-works {
-    & > .container {
-      padding-top: 80px;
-      padding-bottom: 216px;
-      & > .main-content {
-        flex-direction: column;
+      & > .card__title{
+        transition: $resize;
+        display: flex;
+        justify-content: center;
+        @include font-size($sub-title);
         align-items: center;
-        & > .card:nth-child(2){
-          margin-top: 30px;
+        height: 100px;
+      }
+      & > .card__description{
+        transition: $resize;
+        margin: 45px 0 36px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 200;
+        line-height: 24px;
+        color: $sub-font-color;
+        @include font-size($text);
+      }
+      & > .card__link{
+        transition: $resize;
+        text-transform: uppercase;
+        color: $font-color;
+        @include font-size($sub-text-two);
+        &:after{
+          content: '';
+          display: inline-block;
+          width: 26px;
+          height: 10px;
+          background: url(../images/svg/right-arrow.svg) no-repeat, center;
+          margin-left: 10px;
+          margin-bottom: 2px;
         }
+      }
+    }
+    & > .card:nth-child(1){
+      & > .card__icon{
+        height: 110px;
+        top: 45px;
+        background: url("../images/svg/cat-slim.svg") no-repeat top center/auto 97px, radial-gradient(circle,$main-color 48px, transparent 50px);
+      }
+    }
+    & > .card:nth-child(2){
+      & > .card__icon{
+        width: 134px;
+        left: 32px;
+        background: url("../images/svg/cat-pro.svg") no-repeat center/auto 56px, radial-gradient(circle,$main-color 48px, transparent 50px);
       }
     }
   }
 }
+
+@media (max-width: 1380px) {
+  .how-works{
+    & > .container{
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      & > .card:nth-child(1){
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
 @media (max-width: 1220px) {
   .container {
     padding: 0 30px;
   }
 }
+
 @media (max-width: 1024px) {
-  .main-screen{
-    & > .container{
+  .main-screen {
+    & > .container {
       background: url("../images/general/cat-energy-pro.png") no-repeat top 200px right 0;
     }
   }
 }
 
-@media (max-width: 768px){
-  .main-screen{
-    & > .container{
+@media (max-width: 768px) {
+  .main-screen {
+    & > .container {
       height: 950px;
       background: url("../images/general/cat-energy-pro.png") no-repeat top 390px right 81px;
-      & > .main-content{
+      & > .main-content {
         margin: 144px 0 0 90px;
-        & > .main-description{
+        & > .main-description {
           margin: 46px 0;
         }
       }
     }
   }
-  .main-screen_open{
+  .main-screen_open {
     margin-top: 273px;
   }
-  .how-works {
-    & > .container {
-      & > .main-content {
-        & > .card{
-          width: 100%;
-          & > .card__title{
-            display: flex;
-            align-items: center;
-            text-transform: uppercase;
-            & > .card__title-text{
-              font-weight: 200;
-            }
-            &:before{
-              display: none;
-            }
-          }
+  .how-works{
+    & > .container{
+      & > .card{
+        width: 100%;
+        & > .card__icon{
+          height: 200px;
+          width: 200px;
+        }
+        & > .card__title{
+          height: auto;
+          margin-top: 33px;
+          justify-content: flex-start;
+        }
+        & > .card__description{
+          margin: 28px 0 60px;
+          width: calc(100% - 200px);
+        }
+      }
+      & > .card:nth-child(1){
+        & > .card__icon{
+          height: 222px;
+          right: 50px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url("../images/svg/cat-slim.svg") no-repeat top center/auto 194px, radial-gradient(circle,$main-color 98px, transparent 100px);
+        }
+        & > .card__description{
+          width: calc(100% - 224px);
+        }
+      }
+      & > .card:nth-child(2){
+        & > .card__icon{
+          height: 200px;
+          width: 270px;
+          right: 15px;
+          left: auto;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url("../images/svg/cat-pro.svg") no-repeat center center/auto 112px, radial-gradient(circle,$main-color 98px, transparent 100px);
+        }
+        & > .card__description{
+          width: calc(100% - 264px);
         }
       }
     }
   }
+
 }
-@media (max-width: 650px){
-  .main-screen{
-    & > .container{
+
+@media (max-width: 740px) {
+
+}
+
+@media (max-width: 650px) {
+  .main-screen {
+    & > .container {
       display: flex;
       justify-content: center;
       background: url("../images/general/cat-energy-pro.png") no-repeat top 380px center;
-      & > .main-content{
+      & > .main-content {
         margin: 144px 0 0 0;
-        & > .main-title{
-          font-size: $sub-title;
+      }
+    }
+  }
+
+}
+@media (max-width: 620px) {
+  .how-works{
+    & > .container{
+      & > .card{
+        padding: 24px;
+        max-width: 425px;
+        & > .card__icon{
+          height: 50px;
+          width: 50px;
         }
-        & > .main-description{
-          margin: 2.3em 0;
-          font-size: $small-text;
+        & > .card__title{
+          height: 50px;
+          margin-top: 0;
+          justify-content: center;
         }
-        & > .main-button{
-          font-size: $tab_link;
+        & > .card__description{
+          line-height: 25px;
+          margin: 25px 0;
+          width: 100%;
+        }
+      }
+      & > .card:nth-child(1){
+        & > .card__icon{
+          height: 55px;
+          right: auto;
+          top: 21.5px;
+          transform: translateY(0);
+          background: url("../images/svg/cat-slim.svg") no-repeat top center/auto 48px, radial-gradient(circle,$main-color 23px, transparent 25px);
+        }
+        & > .card__description{
+          width: 100%;
+        }
+      }
+      & > .card:nth-child(2){
+        & > .card__icon{
+          height: 50px;
+          width: 68px;
+          left: 14px;
+          right: auto;
+          top: auto;
+          transform: translateY(0);
+          background: url("../images/svg/cat-pro.svg") no-repeat center center/auto 28px, radial-gradient(circle,$main-color 23px, transparent 25px);
+        }
+        & > .card__description{
+          width: 100%;
         }
       }
     }
   }
 }
 @media (max-width: 425px) {
-  .container{
-   padding: 0 20px;
+  .container {
+    padding: 0 20px;
   }
-  .main-screen{
-    & > .container{
+  .main-screen {
+    & > .container {
       height: 568px;
       display: flex;
       justify-content: center;
       background: url("../images/general/cat-energy-mobile.png") no-repeat top 219px right 64px, url("../images/general/index-background-mobile.jpg") no-repeat top 57px center, linear-gradient(to bottom, rgb(99, 167, 58) 63.7%, rgba(99, 167, 58, 0) 63.7%, rgba(255, 255, 255, 0) 100%, rgb(4, 120, 21) 100%);
-      & > .main-content{
+      & > .main-content {
         color: #fff;
         width: 100%;
         height: 100%;
@@ -292,26 +363,49 @@ button {
         justify-content: space-between;
         text-align: center;
 
-        & > .main-title{
+        & > .main-title {
           font-weight: 200;
           margin-top: 74px;
-          font-size: $sub-title;
         }
-        & > .main-description{
+        & > .main-description {
           margin-top: -284px;
-          font-size: $small-text;
         }
-        & > .main-button{
+        & > .main-button {
           height: 40px;
           width: 100%;
-          font-size: $tab_link;
+        }
+      }
+    }
+  }
+  .how-works{
+    & > .container{
+      & > .card{
+        & > .card__description{
+          line-height: 18px;
         }
       }
     }
   }
 }
+@media (max-width: 375px) {
+  .how-works{
+    & > .container{
+      & > .card{
+        & > .card__description{
+          line-height: 18px;
+        }
+      }
+      & > .card:nth-child(2){
+        & > .card__title{
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 320px) {
-  .main-screen{
+  .main-screen {
     & > .container {
       height: 568px;
       display: flex;

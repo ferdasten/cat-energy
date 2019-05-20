@@ -35,7 +35,7 @@
             display: flex;
             align-items: center;
             text-transform: uppercase;
-            font-size: $subtext;
+            @include font-size($link);
           }
           & > .menu__link_active{
             border-bottom: 2px solid #fff;
@@ -54,14 +54,10 @@
 }
 @media (max-width: 1024px) {
   .header {
-
     & > .container {
-
       & > .main-content{
         & > .menu{
-
           & > .menu__list{
-
             & > .menu__link{
               color: #000;
             }
@@ -87,7 +83,6 @@
           & > .menu__list{
             & > .menu__link{
               color: #000;
-              font-size: $tab_link;
             }
             & > .menu__link_active{
               border-bottom: 2px solid $main-color;
@@ -207,12 +202,9 @@
           padding: 24px 0;
           text-transform: uppercase;
           font-family: 'Oswald-Medium';
-          font-size: $subtext;
+          @include font-size($link);
           transition: .5s;
           color: #000;
-        }
-        & > .menu__link_active {
-
         }
       }
     }
