@@ -115,12 +115,12 @@ button {
     }
   }
 }
-.how-works{
+.cards{
   & > .container{
     display: flex;
     justify-content: space-between;
     padding-top: 80px;
-    height: 1024px;
+    padding-bottom: 40px;
     & > .card{
       transition: $resize;
       padding: 50px;
@@ -183,9 +183,90 @@ button {
     }
   }
 }
+.how-works{
+  & > .container{
+    padding-top: 40px;
+    padding-bottom: 218px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    & > .how-works__title{
+      margin-bottom: 72px;
+      @include font-size($main-title);
+      flex: 0 1 100%;
+    }
+    & > .how-works__wrap-step{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      & > .how-works__step{
+        width: 245px;
+        height: 230px;
+        & > .how-works__icon{
+          width: 80px;
+          height: 80px;
+          margin-bottom: 37px;
+        }
+        & > .how-works__text{
+          font-family: Arial, Helvetica, sans-serif;
+          @include font-size($text);
+          color: #444444;
+          line-height: 24px;
+        }
+      }
+    }
+    & > .how-works__wrap-step:nth-child(2){
+      flex: 0 1 50%;
+      border: 1px solid red;
+      & > .how-works__step:nth-child(1){
+        & > .how-works__icon{
+          background: url("../images/general/sheet.png") no-repeat center,$main-color;
+        }
+      }
+      & > .how-works__step:nth-child(2){
+        & > .how-works__icon{
+          background: url("../images/general/flour.png") no-repeat center,$main-color;
+        }
+      }
+    }
+    & > .how-works__wrap-step:nth-child(3){
+      flex: 0 1 50%;
+      & > .how-works__step:nth-child(1){
+        & > .how-works__icon{
+          background: url("../images/general/eating.png") no-repeat center,$main-color;
+        }
+      }
+      & > .how-works__step:nth-child(2){
+        & > .how-works__icon{
+          background: url("../images/general/clock.png") no-repeat center,$main-color;
+        }
+      }
+    }
+    //& > .how-works__step:nth-child(2){
+    //  & > .how-works__icon{
+    //    background: url("../images/general/sheet.png") no-repeat center,$main-color;
+    //  }
+    //}
+    //& > .how-works__step:nth-child(3){
+    //  & > .how-works__icon{
+    //    background: url("../images/general/flour.png") no-repeat center,$main-color;
+    //  }
+    //}
+    //& > .how-works__step:nth-child(4){
+    //  & > .how-works__icon{
+    //    background: url("../images/general/eating.png") no-repeat center,$main-color;
+    //  }
+    //}
+    //& > .how-works__step:nth-child(5){
+    //  & > .how-works__icon{
+    //    background: url("../images/general/clock.png") no-repeat center,$main-color;
+    //  }
+    //}
+  }
+}
 
 @media (max-width: 1380px) {
-  .how-works{
+  .cards{
     & > .container{
       flex-direction: column;
       align-items: center;
@@ -227,7 +308,7 @@ button {
   .main-screen_open {
     margin-top: 273px;
   }
-  .how-works{
+  .cards{
     & > .container{
       & > .card{
         width: 100%;
@@ -294,7 +375,7 @@ button {
 
 }
 @media (max-width: 620px) {
-  .how-works{
+  .cards{
     & > .container{
       & > .card{
         padding: 24px;
@@ -377,7 +458,7 @@ button {
       }
     }
   }
-  .how-works{
+  .cards{
     & > .container{
       & > .card{
         & > .card__description{
@@ -388,7 +469,7 @@ button {
   }
 }
 @media (max-width: 375px) {
-  .how-works{
+  .cards{
     & > .container{
       & > .card{
         & > .card__description{
